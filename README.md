@@ -1,4 +1,4 @@
-This a fork of the formatall extension that I've used to update all imports in the directly. 
+This a fork of the formatall extension that I've used to update all imports in the workspace. 
 
 I couldn't work out how to configure it to instead of `editor.action.format` to `source.addMissingImports` , so instead I set it to: `editor.action.insertLineAfter`, and have an 'on save action ' to `source.addMissingImports`. /shrug
 
