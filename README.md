@@ -1,22 +1,10 @@
-# formatallfilesinworkspace README
+This a fork of the formatall extension that I've used to update all imports in the directly. 
 
-## Features
+I couldn't work out how to configure it to instead of 'editor.action.format' to 'source.addMissingImports' , so instead I set it to: 'editor.action.insertLineAfter', and have an 'on save action ' to 'sourceAddMissingImport's. /shrug
 
-A silly little extension provides the **Format All Files in Workspace** command, which opens each of the files in your workspace and formats them using whatever extensions you already have installed for formatting. It is recommended that you set the included file extensions and excluded folder settings before running, as the defaults may not be appropriate for your setup. **Warning**: Formatting all your files may be slow.
+This extension isn't publish, I just used the dev mode to do this as a one time task. 
 
-## Extension Settings
+## The whole process: 
 
-* `formatAll.includeFileExtensions`: Only files with file extensions in this list will be opened and formatted. Defaults to `[".ts", ".json"]`.
-* `formatAll.excludeFolders`: These folders will be skipped when looking for files to format. Defaults to `["node_modules", "out", ".vscode-test", "media"]`
+The purpose of this was to change all imports of '../..' to '../../MoreDirectRefernce/ToToTheComponent'. 
 
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 0.0.1
-
-Initial release of Format All Files in Workspace

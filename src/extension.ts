@@ -19,6 +19,7 @@ export function activate(context: vscode.ExtensionContext) {
 			await formatAll(folder.uri);
 		}
 		vscode.window.showInformationMessage('Finished formatting all.');
+		console.log(unableToFormat);
 	});
 
 	context.subscriptions.push(disposable);
@@ -33,8 +34,11 @@ async function formatAll(uri: vscode.Uri): Promise<any> {
 		}
 	} else if (((stat.type & vscode.FileType.File) === vscode.FileType.File) && includeExtensions.includes(path.extname(uri.fsPath))) {
 		try {
+			console.log("formating", uri)
 			await vscode.window.showTextDocument(uri);
-			await vscode.commands.executeCommand('editor.action.formatDocument');
+			await vscode.commands.executeCommand('editor.action.insertLineAfter');
+
+	
 		} catch (e) {
 			unableToFormat.push(uri.fsPath);
 		}
